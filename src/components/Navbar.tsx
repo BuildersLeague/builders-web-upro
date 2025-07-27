@@ -72,14 +72,16 @@ export function Navbar() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-12">
-            {/* Primary nav links */}
-            <ul className="flex items-center gap-10" role="menubar"></ul>
-          </div>
-
           {/* Right - secondary actions */}
           <div className="flex items-center gap-4 lg:gap-6">
+            {/* Pricing link for desktop */}
+            <Link
+              href="/pricing"
+              className="hidden lg:inline text-white hover:text-[#00FF3C] text-sm lg:text-base"
+              role="menuitem"
+            >
+              Pricing
+            </Link>
             {/* Auth Section */}
             {loading ? (
               <div className="w-8 h-8 animate-pulse bg-white/20 rounded-full" />
