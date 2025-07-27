@@ -67,6 +67,14 @@
   --shadow-xl:
     0 1px 3px 0px oklch(0 0 0 / 0.1), 0 8px 10px -1px oklch(0 0 0 / 0.1);
   --shadow-2xl: 0 1px 3px 0px oklch(0 0 0 / 0.25);
+
+  --on-surface: var(--color-upro-text-primary);
+  --on-accent: oklch(0 0 0);
+  --chip-bg: oklch(1 0 0);
+  --chip-fg: oklch(0 0 0);
+  --color-upro-on-green: oklch(0 0 0);
+  --upro-input-bg: #1a2a25;
+  --upro-input-border: #2e423b;
 }
 
 .dark {
@@ -114,6 +122,13 @@
   --shadow-xl:
     0 1px 3px 0px oklch(0 0 0 / 0.1), 0 8px 10px -1px oklch(0 0 0 / 0.1);
   --shadow-2xl: 0 1px 3px 0px oklch(0 0 0 / 0.25);
+  --on-surface: var(--color-upro-text-primary);
+  --on-accent: oklch(0 0 0);
+  --chip-bg: oklch(1 0 0);
+  --chip-fg: oklch(0 0 0);
+  --color-upro-on-green: oklch(0 0 0);
+  --upro-input-bg: #1a2a25;
+  --upro-input-border: #2e423b;
 }
 
 @theme inline {
@@ -190,5 +205,105 @@
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+  .bg-hero-gradient {
+    background:
+      linear-gradient(
+        172deg,
+        color-mix(in srgb, var(--color-upro-background), transparent 30%) 24.02%,
+        color-mix(in srgb, var(--color-primary), transparent 30%) 141.68%
+      ),
+      var(--color-upro-background);
+  }
+
+  .font-hero {
+    font-family:
+      "THE BOLD FONT",
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border backdrop-blur-sm;
+    background: color-mix(in srgb, #000, transparent 60%);
+    border-color: color-mix(in oklab, var(--color-foreground), transparent 90%);
+  }
+
+  .btn-upro {
+    @apply rounded-3xl font-medium px-6 py-3 transition-colors duration-200;
+    background-color: var(--color-upro-green);
+    color: var(--color-upro-on-green);
+  }
+  .btn-upro:hover {
+    background-color: var(--color-upro-green-dark);
+  }
+  .btn-upro:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .text-hero-primary {
+    color: var(--color-upro-text-primary);
+  }
+  .text-hero-secondary {
+    color: var(--color-upro-text-secondary);
+  }
+
+  .bg-upro-landing {
+    background-color: var(--color-upro-background);
+  }
+
+  .text-on-surface-75 {
+    color: color-mix(in oklch, var(--on-surface) 75%, transparent);
+  }
+  .text-on-surface-80 {
+    color: color-mix(in oklch, var(--on-surface) 80%, transparent);
+  }
+  .text-on-surface-90 {
+    color: color-mix(in oklch, var(--on-surface) 90%, transparent);
+  }
+  .bg-on-surface-10 {
+    background-color: color-mix(in oklch, var(--on-surface) 10%, transparent);
+  }
+
+  .text-on-accent {
+    color: var(--on-accent);
+  }
+
+  .chip-default {
+    background-color: var(--chip-bg);
+    color: var(--chip-fg);
+  }
+
+  .text-on-surface {
+    color: var(--on-surface);
+  }
+  .text-on-surface-70 {
+    color: color-mix(in oklch, var(--on-surface) 70%, transparent);
+  }
+  .text-on-surface-85 {
+    color: color-mix(in oklch, var(--on-surface) 85%, transparent);
+  }
+  .bg-on-surface-05 {
+    background-color: color-mix(in oklch, var(--on-surface) 5%, transparent);
+  }
+  .border-on-surface-10 {
+    border-color: color-mix(in oklch, var(--on-surface) 10%, transparent);
+  }
+
+  .ui-field {
+    background-color: var(--upro-input-bg);
+    border-color: var(--upro-input-border);
+    color: var(--on-surface);
   }
 }
