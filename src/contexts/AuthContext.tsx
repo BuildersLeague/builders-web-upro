@@ -8,16 +8,13 @@ interface AuthContextType {
   user: User | null;
   session: Session | null;
   loading: boolean;
-  signIn: (
-    email: string,
-    password: string
-  ) => Promise<{ error: AuthError | null }>;
+  signIn: (email: string, password: string) => Promise<{ error: any }>;
   signUp: (
     email: string,
     password: string,
     firstName: string,
     lastName: string
-  ) => Promise<{ error: AuthError | null }>;
+  ) => Promise<{ error: any }>;
   signOut: () => Promise<void>;
 }
 
@@ -29,14 +26,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
       setLoading(false);
     });
 
-    // Listen for auth changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -62,7 +57,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     firstName: string,
     lastName: string
   ) => {
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -72,8 +67,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         },
       },
     });
-    return { error };
+
+    if (error || !data.user) return { error };
+
+    const authUserId = data.user.id;
+
+    const { data: accountInsert, error: accountError } = await supabase
+      .from("accounts")
+      .insert({ auth_user_id: authUserId })
+      .select("id")
+      .single();
+
+    if (accountError || !accountInsert) return { error: accountError };
+
+    const accountId = accountInsert.id;
+
+    const { error: userError } = await supabase.from("users").insert({
+      account_id: accountId,
+      name: `${firstName} ${lastName}`,
+      gender: "other", 
+      age_group: 1,
+      subscription_type: 1, 
+    });
+      console.error("User insert error:", userError);
+    return { error: userError };
+
   };
+
+
 
   const signOut = async () => {
     await supabase.auth.signOut();

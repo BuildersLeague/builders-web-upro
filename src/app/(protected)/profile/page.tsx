@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+
 import { useAccount } from "@/hooks/useAccount";
+
 import {
   Card,
   CardContent,
@@ -10,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { ChildrenManagementTab } from "@/components/profile/ChildrenManagementTab";
@@ -20,6 +23,68 @@ export default function ProfilePage() {
   const { account, isLoading } = useAccount();
   const [activeTab, setActiveTab] = useState("profile");
   const [isEditing, setIsEditing] = useState(false);
+
+  const [accountId, setAccountId] = useState<number | null>(null);
+  const [profiles, setProfiles] = useState<UserProfile[]>([]);
+  const [loadingProfiles, setLoadingProfiles] = useState(true);
+
+  const [form, setForm] = useState({
+    name: "",
+    gender: "",
+    age_group: "",
+  });
+
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (!user) return;
+    const getAccountId = async () => {
+      const { data, error } = await supabase.rpc("get_current_account_id");
+      if (!error) setAccountId(data);
+    };
+    getAccountId();
+  }, [user]);
+
+  useEffect(() => {
+    if (!accountId) return;
+    const fetchProfiles = async () => {
+      setLoadingProfiles(true);
+      const { data, error } = await supabase
+        .from("users")
+        .select("id, name, gender, age_group")
+        .eq("account_id", accountId);
+      if (!error && data) setProfiles(data);
+      setLoadingProfiles(false);
+    };
+    fetchProfiles();
+  }, [accountId]);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!accountId) return;
+    setSubmitting(true);
+    const { error } = await supabase.from("users").insert({
+      account_id: accountId,
+      name: form.name,
+      gender: form.gender,
+      age_group: Number(form.age_group),
+    });
+    if (!error) {
+      setForm({ name: "", gender: "", age_group: "" });
+      const { data } = await supabase
+        .from("users")
+        .select("id, name, gender, age_group")
+        .eq("account_id", accountId);
+      if (data) setProfiles(data);
+    }
+    setSubmitting(false);
+  };
 
   return (
     <div className="min-h-[calc(100vh-4rem)] p-8">
@@ -124,6 +189,6 @@ export default function ProfilePage() {
           </TabsContent>
         </Tabs>
       </div>
-    </div>
+    </main>
   );
 }
