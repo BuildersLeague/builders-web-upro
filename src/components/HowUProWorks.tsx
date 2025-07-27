@@ -6,7 +6,7 @@ export default function HowUProWorks(): ReactElement {
 
   return (
     <div className="flex flex-col gap-5 bg-black h-auto p-8 ">
-      <div className="flex flex-col gap-10 mt-20 lg:mt-40 mb-10 max-w-3xl items-center mx-auto">
+      <div className="flex flex-col gap-10 mt-20 lg:mt-40 mb-10 max-w-5xl items-center mx-auto">
         <h1
           className="text-center font-bold text-white text-3xl md:text-5xl transition-all duration-1000 ease-out"
           style={{
@@ -20,7 +20,7 @@ export default function HowUProWorks(): ReactElement {
           Starts Here
         </h1>
         <p
-          className="text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl  text-center  transition-all duration-1000 ease-out delay-200"
+          className="text-white font-bold text-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed max-w-6xl mx-auto mb-12 lg:mb-20"
           style={{
             fontFamily:
               "Montserrat, -apple-system, Roboto, Helvetica, sans-serif",
@@ -36,7 +36,7 @@ export default function HowUProWorks(): ReactElement {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-col-1 md:grid-cols-6 gap-10 lg:gap-y-16 lg:gap-x-10 px-6 py-20  mx-auto">
+      <div className="grid grid-col-1 md:grid-cols-6 gap-10 lg:gap-y-8 lg:gap-x-10 px-6 py-10  mx-auto">
         {/* Capture Movement */}
         <div className={`col-span-3  ${cardClass}`}>
           <CardDetails
@@ -45,7 +45,7 @@ export default function HowUProWorks(): ReactElement {
             to track real-time biomechanics. No wearables. No setup. Just
             hit record."
             imgSrc="tracking.png"
-            imgClassName="hidden lg:block rounded-lg w-full lg:w-[70%] mx-auto "
+            imgClassName=" lg:block rounded-lg w-full lg:w-[70%] mx-auto "
             contentClassName=" flex flex-col h-full gap-2"
           />
         </div>
@@ -57,7 +57,7 @@ export default function HowUProWorks(): ReactElement {
             description="Each session adapts to your player’s age and level. Earn XP by
                 completing challenges, improving form, and unlocking new drills."
             imgSrc="level_up_skills.svg"
-            imgClassName="hidden lg:block mx-auto w-60 lg:w-1/2 "
+            imgClassName=" lg:block mx-auto w-60 lg:w-1/2 "
             headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full lg:w-1/2 justify-start items-start"
             contentClassName=" flex flex-col lg:flex-row  h-full"
           />
@@ -67,9 +67,9 @@ export default function HowUProWorks(): ReactElement {
         <div className={`col-span-3 lg:col-span-4 ${cardClass}`}>
           <CardDetails
             title="Get Rewarded"
-            description="Earn badges, unlock exclusive content, and show off your skills. Share your progress, connect with a community, and take your understanding of the game to new heights. Discover new insights, learn from experts, and get recognized for your knowledge of soccer machine learning applications."
+            description="Badges, cosmetics, leaderboards, and certificates turn training into a game. Kids stay motivated — and proud of their progress."
             imgSrc="badges.svg"
-            imgClassName="hidden lg:block w-[45%]"
+            imgClassName=" lg:block w-[45%]"
             imgStyle={{
               WebkitMaskImage: `
               radial-gradient(circle at bottom right, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%),

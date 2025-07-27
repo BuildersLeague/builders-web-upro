@@ -68,7 +68,7 @@ export function Navbar() {
               alt="U-Pro logo"
               width={48}
               height={48}
-              className="h-12 w-12"
+              className="h-20 w-20"
             />
           </Link>
 
@@ -91,7 +91,7 @@ export function Navbar() {
                     className="relative h-8 w-8 rounded-full hover:bg-white/10"
                   >
                     <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-[#00FF3C] text-black">
+                      <AvatarFallback className="bg-primary text-black">
                         {getInitials(user.email || "U")}
                       </AvatarFallback>
                     </Avatar>
@@ -131,24 +131,6 @@ export function Navbar() {
                       <span>Profile</span>
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                    asChild
-                    className="text-white hover:bg-white/10 focus:bg-white/10"
-                  >
-                    <Link href="/settings" className="cursor-pointer">
-                      <Settings className="mr-2 h-4 w-4" />
-                      <span>Settings</span>
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    asChild
-                    className="text-white hover:bg-white/10 focus:bg-white/10"
-                  >
-                    <Link href="/data-demo" className="cursor-pointer">
-                      <Database className="mr-2 h-4 w-4" />
-                      <span>Data Demo</span>
-                    </Link>
-                  </DropdownMenuItem>
                   <DropdownMenuSeparator className="bg-white/20" />
                   <DropdownMenuItem
                     className="cursor-pointer text-red-400 hover:text-red-300 hover:bg-white/10 focus:text-red-300 focus:bg-white/10"
@@ -173,7 +155,7 @@ export function Navbar() {
 
                 <Button
                   asChild
-                  className="rounded-full bg-[#00FF3C] px-4 lg:px-6 py-2 text-black hover:bg-[#00e636] text-sm lg:text-base"
+                  className=" px-4 lg:px-6 py-2 text-black hover:bg-[#00e636] text-sm lg:text-base"
                 >
                   <Link href="/auth?mode=signup">Try it free</Link>
                 </Button>
