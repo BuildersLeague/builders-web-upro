@@ -21,7 +21,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { Asterisk } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
@@ -63,8 +63,13 @@ export function Navbar() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Left - brand */}
           <Link href="/" className="flex items-center gap-2">
-            <Asterisk className="h-8 w-8 text-[#00FF3C]" />
-            <span className="text-xl font-bold text-[#00FF3C]">U-Pro</span>
+            <Image
+              src="/uproLogo.svg"
+              alt="U-Pro logo"
+              width={48}
+              height={48}
+              className="h-12 w-12"
+            />
           </Link>
 
           {/* Desktop Navigation */}
