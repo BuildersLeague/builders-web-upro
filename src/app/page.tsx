@@ -1,4 +1,3 @@
-import CallToActionPage from "@/components/CallToActionPage";
 import ElevatorPitchSection from "@/components/ElevatorPitchSection";
 import Hero from "@/components/Hero";
 import HowUProWorks from "@/components/HowUProWorks";
