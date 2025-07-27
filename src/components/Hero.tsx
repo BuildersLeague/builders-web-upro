@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden py-16 md:py-20 lg:py-24"
+      className="relative overflow-hidden "
       role="banner"
       aria-labelledby="hero-heading"
     >
@@ -72,14 +72,14 @@ export default function Hero() {
 
         {/* Mobile phone mockup */}
         <div
-          className="mt-16 lg:mt-24 flex justify-center"
+          className="mt-16 lg:mt-24 flex justify-center "
           role="img"
           aria-label="Mobile app preview"
         >
           <div className="relative">
             {/* Phone container */}
             <div
-              className="w-64 sm:w-80 lg:w-96 xl:w-[32rem] h-[32rem] sm:h-[40rem] lg:h-[48rem] xl:h-[56rem] bg-black rounded-t-3xl lg:rounded-t-[3rem] relative"
+              className=" w-64 sm:w-80 lg:w-96 xl:w-[32rem] h-[24rem] sm:h-[32rem] lg:h-[40rem] xl:h-[48rem] bg-black rounded-t-3xl lg:rounded-t-[3rem] relative"
               style={{
                 border: "1.5px solid rgba(145, 182, 145, 0.20)",
                 borderBottom: "none",
@@ -100,7 +100,7 @@ export default function Hero() {
 
               {/* Mock interface elements */}
               <div
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6"
+                className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6"
                 aria-hidden="true"
               >
                 {/* Progress bars */}
@@ -112,17 +112,6 @@ export default function Hero() {
                   className="w-4/5 h-8 lg:h-10 bg-white bg-opacity-30 rounded-2xl mx-auto mb-16 lg:mb-20"
                   role="presentation"
                 />
-              </div>
-
-              {/* Get Started button in phone */}
-              <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 left-1/2 transform -translate-x-1/2 w-5/6">
-                <button
-                  className="w-full bg-upro-green text-black font-medium text-lg lg:text-xl py-4 lg:py-5 rounded-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black"
-                  type="button"
-                  aria-label="Get started with U-Pro Soccer app"
-                >
-                  Get Started
-                </button>
               </div>
             </div>
           </div>

@@ -18,12 +18,13 @@ export default function Home() {
     >
       <Hero />
       <HowUProWorks />
-      <ElevatorPitchSection />
+      {/* <ElevatorPitchSection /> */}
       <TrustedByExpertsSection />
-      <TestimonialSection />
       <TrainingPartner />
-      <Sponsors />
       <CallToActionPage />
+      <TestimonialSection />
+
+      <Sponsors />
     </main>
   );
 }

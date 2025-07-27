@@ -52,8 +52,10 @@ export function TrainingPartner() {
                 height={250}
                 className="rounded-lg object-cover w-full h-48"
               />
-              <h3 className="font-bold mt-4 text-lg">{partner.title}</h3>
-              <p className="text-muted-foreground mt-2 text-sm">
+              <h3 className="font-bold text-lg sm:text-xl md:text-2xl mt-4">
+                {partner.title}
+              </h3>
+              <p className="text-muted-foreground text-base sm:text-lg md:text-xl mt-2">
                 {partner.description}
               </p>
             </CardContent>

@@ -48,25 +48,6 @@ export default function SettingsPage() {
               </Button>
             </CardContent>
           </Card>
-
-          <Card className="border-red-200">
-            <CardHeader>
-              <CardTitle className="text-red-600">Danger Zone</CardTitle>
-              <CardDescription>Irreversible actions</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button variant="destructive" onClick={signOut}>
-                Sign Out
-              </Button>
-            </CardContent>
-          </Card>
-
-          <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-            <p className="text-purple-800 text-sm">
-              🛡️ This settings page is also automatically protected! No need to
-              add auth checks to individual pages.
-            </p>
-          </div>
         </div>
       </div>
     </div>
