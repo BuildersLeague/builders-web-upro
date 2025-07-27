@@ -16,7 +16,7 @@ export default function ElevatorPitchSection() {
             color: "#D7E4D7",
           }}
         >
-          A NEW WAY TO TRAIN STARTS HERE
+          A NEW WAY TO TRAIN STARTS HEREsss
         </h2>
 
         <p

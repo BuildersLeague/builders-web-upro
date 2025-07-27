@@ -21,7 +21,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { Asterisk } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
@@ -63,74 +63,25 @@ export function Navbar() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Left - brand */}
           <Link href="/" className="flex items-center gap-2">
-            <Asterisk className="h-8 w-8 text-[#00FF3C]" />
-            <span className="text-xl font-bold text-[#00FF3C]">U-Pro</span>
+            <Image
+              src="/uproLogo.svg"
+              alt="U-Pro logo"
+              width={48}
+              height={48}
+              className="h-20 w-20"
+            />
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-12">
-            {/* Primary nav links */}
-
-            <ul className="flex items-center gap-10" role="menubar">
-              <li role="none">
-                <Link
-                  href="#features"
-                  className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C] focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
-                  role="menuitem"
-                >
-                  Features
-                </Link>
-              </li>
-              <li role="none">
-                <Link
-                  href="#pricing"
-                  className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C] focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
-                  role="menuitem"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li role="none">
-                <Link
-                  href="#contact"
-                  className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C] focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
-                  role="menuitem"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li role="none">
-                <Link
-                  href="#partners"
-                  className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C] focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
-                  role="menuitem"
-                >
-                  Partners
-                </Link>
-              </li>
-              <li role="none">
-                <Link
-                  href="#testimonials"
-                  className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C] focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
-                  role="menuitem"
-                >
-                  Testimonials
-                </Link>
-              </li>
-              <li role="none">
-                <Link
-                  href="#experts"
-                  className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C] focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
-                  role="menuitem"
-                >
-                  Trusted By Experts
-                </Link>
-              </li>
-            </ul>
-          </div>
 
           {/* Right - secondary actions */}
           <div className="flex items-center gap-4 lg:gap-6">
+            {/* Pricing link for desktop */}
+            <Link
+              href="/pricing"
+              className="hidden lg:inline text-white hover:text-[#00FF3C] text-sm lg:text-base"
+              role="menuitem"
+            >
+              Pricing
+            </Link>
             {/* Auth Section */}
             {loading ? (
               <div className="w-8 h-8 animate-pulse bg-white/20 rounded-full" />
@@ -142,7 +93,7 @@ export function Navbar() {
                     className="relative h-8 w-8 rounded-full hover:bg-white/10"
                   >
                     <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-[#00FF3C] text-black">
+                      <AvatarFallback className="bg-primary text-black">
                         {getInitials(user.email || "U")}
                       </AvatarFallback>
                     </Avatar>
@@ -182,24 +133,6 @@ export function Navbar() {
                       <span>Profile</span>
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                    asChild
-                    className="text-white hover:bg-white/10 focus:bg-white/10"
-                  >
-                    <Link href="/settings" className="cursor-pointer">
-                      <Settings className="mr-2 h-4 w-4" />
-                      <span>Settings</span>
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    asChild
-                    className="text-white hover:bg-white/10 focus:bg-white/10"
-                  >
-                    <Link href="/data-demo" className="cursor-pointer">
-                      <Database className="mr-2 h-4 w-4" />
-                      <span>Data Demo</span>
-                    </Link>
-                  </DropdownMenuItem>
                   <DropdownMenuSeparator className="bg-white/20" />
                   <DropdownMenuItem
                     className="cursor-pointer text-red-400 hover:text-red-300 hover:bg-white/10 focus:text-red-300 focus:bg-white/10"
@@ -224,7 +157,7 @@ export function Navbar() {
 
                 <Button
                   asChild
-                  className="rounded-full bg-[#00FF3C] px-4 lg:px-6 py-2 text-black hover:bg-[#00e636] text-sm lg:text-base"
+                  className=" px-4 lg:px-6 py-2 text-black hover:bg-[#00e636] text-sm lg:text-base"
                 >
                   <Link href="/auth?mode=signup">Try it free</Link>
                 </Button>
@@ -276,7 +209,7 @@ export function Navbar() {
                   Features
                 </Link>
                 <Link
-                  href="#pricing"
+                  href="/pricing"
                   className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
                   role="menuitem"
                 >
@@ -290,7 +223,7 @@ export function Navbar() {
                   Contact
                 </Link>
                 <Link
-                  href="#partners"
+                  href="/partners"
                   className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
                   role="menuitem"
                 >
