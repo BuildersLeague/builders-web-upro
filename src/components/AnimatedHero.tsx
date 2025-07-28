@@ -106,11 +106,13 @@ export default function AnimatedHero() {
         >
           <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/8]">
             <Image
-              src="/images/hero/heroMobile.svg"
+              src="/images/hero/heroMobile.webp"
               alt="U-Pro mobile app interface showing soccer training exercises and progress tracking"
               fill
               className="object-contain"
               priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
             />
           </div>
