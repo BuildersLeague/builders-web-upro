@@ -5,6 +5,7 @@ import TrustedByExpertsSection from "@/components/TrustedByExpertsSection";
 import CallToActionPage from "@/components/CallToActionPage";
 import { TrainingPartner } from "@/components/TrainingPartner";
 import { Sponsors } from "@/components/Sponsors";
+import HowUProWorks from "@/components/HowUProWorks";
 
 // Server Component - rendered on the server
 export default function Home() {
@@ -16,7 +17,8 @@ export default function Home() {
       aria-label="U-Pro Soccer homepage"
     >
       <AnimatedHero />
-      <AnimatedHowUProWorks />
+      {/* <AnimatedHowUProWorks /> */}
+      <HowUProWorks />
       <TrustedByExpertsSection />
       <TrainingPartner />
       <CallToActionPage />
