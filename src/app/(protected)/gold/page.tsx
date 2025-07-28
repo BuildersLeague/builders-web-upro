@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { Button } from "@/components/ui/button";
 
 type StoreItem = {
   id: number;
