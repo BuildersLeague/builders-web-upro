@@ -59,7 +59,11 @@ export default function Footer() {
 
             {/* Social media icons */}
             <div className="flex items-center justify-center lg:justify-start gap-3.5">
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="U-Pro on Facebook"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -74,7 +78,11 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="U-Pro on Instagram"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -89,7 +97,11 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
+              <a
+                href="#"
+                className="hover:opacity-80 transition-opacity"
+                aria-label="U-Pro on Twitter"
+              >
                 <svg
                   width="24"
                   height="24"

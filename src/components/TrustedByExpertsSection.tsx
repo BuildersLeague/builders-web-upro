@@ -48,7 +48,7 @@ export default function TrustedByExpertsSection() {
           {/* Image */}
           <div className="flex-1 w-full">
             <Image
-              src="images/TrustedByExpertsPhotos/kidAdultPractice.svg"
+              src="/images/TrustedByExpertsPhotos/kidAdultPractice.svg"
               alt="Child practicing soccer drills in a bright living room with a professional coach demonstrating techniques, showcasing U-Pro's expert-backed training approach"
               className="w-full h-auto rounded-xl lg:rounded-3xl shadow-lg"
               width={624}
