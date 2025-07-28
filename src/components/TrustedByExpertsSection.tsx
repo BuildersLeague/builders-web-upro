@@ -53,6 +53,7 @@ export default function TrustedByExpertsSection() {
               className="w-full h-auto rounded-xl lg:rounded-3xl shadow-lg"
               width={624}
               height={485}
+              loading="lazy"
               style={{
                 objectFit: "cover",
               }}

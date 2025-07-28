@@ -23,6 +23,9 @@ export default function PricingTable() {
                 className="w-64 h-64 object-cover rounded-lg mb-8"
                 width={256}
                 height={256}
+                priority
+                loading="eager"
+                fetchPriority="high"
               />
               <div className="text-center mb-8">
                 <h3 className="text-soccer-text text-lg font-bold mb-4">
@@ -45,6 +48,7 @@ export default function PricingTable() {
                 className="w-64 h-64 object-cover rounded-lg mb-8"
                 width={256}
                 height={256}
+                loading="lazy"
               />
               <div className="text-center mb-8">
                 <h3 className="text-soccer-text text-lg font-bold mb-4">
@@ -67,6 +71,7 @@ export default function PricingTable() {
                 className="w-64 h-64 object-cover rounded-lg mb-8"
                 width={256}
                 height={256}
+                loading="lazy"
               />
               <div className="text-center mb-8">
                 <h3 className="text-soccer-text text-lg font-bold mb-4">
