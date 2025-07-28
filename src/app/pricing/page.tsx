@@ -1,41 +1,6 @@
 "use client";
-
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
-const plans = [
-  {
-    title: "Training Mat",
-    price: "$199",
-    button: "Buy Mat",
-    image: "/price1.png",
-    features: [
-      { icon: "🛠️", label: "Material", desc: "Durable and comfortable" },
-      { icon: "👤", label: "Player Access", desc: "Single player" },
-    ],
-  },
-  {
-    title: "Monthly Subscription",
-    price: "$9.99",
-    button: "Subscribe",
-    image: "/price2.png",
-    features: [
-      { icon: "🛠️", label: "Material", desc: "Durable and comfortable" },
-      { icon: "👤", label: "Player Access", desc: "Single player" },
-    ],
-  },
-  {
-    title: "Family Pack",
-    price: "$19.99",
-    button: "Subscribe",
-    image: "/price3.png",
-    features: [
-      { icon: "🛠️", label: "Material", desc: "Durable and comfortable" },
-      { icon: "👤", label: "Player Access", desc: "Single player" },
-    ],
-  },
-];
 
 export default function PricingTable() {
   return (
@@ -52,10 +17,12 @@ export default function PricingTable() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
             {/* Training Mat */}
             <div className="flex flex-col items-center p-8 border-b lg:border-b-0 lg:border-r border-soccer-text/20">
-              <img
+              <Image
                 src="https://api.builder.io/api/v1/image/assets/TEMP/409f43071f443eb46ad3dc0ff9294cc67a3e64fb?width=504"
                 alt="A durable soccer training mat spread out on a bright living room floor with a child practicing soccer drills"
                 className="w-64 h-64 object-cover rounded-lg mb-8"
+                width={256}
+                height={256}
               />
               <div className="text-center mb-8">
                 <h3 className="text-soccer-text text-lg font-bold mb-4">
@@ -72,10 +39,12 @@ export default function PricingTable() {
 
             {/* Monthly Subscription */}
             <div className="flex flex-col items-center p-8 border-b lg:border-b-0 lg:border-r border-soccer-text/20">
-              <img
+              <Image
                 src="https://api.builder.io/api/v1/image/assets/TEMP/7b469c8b77bfb76a120f0fffaa7fb5096626ec9d?width=504"
                 alt="A vibrant soccer training mat laid out on a wooden floor, highlighting its texture and design"
                 className="w-64 h-64 object-cover rounded-lg mb-8"
+                width={256}
+                height={256}
               />
               <div className="text-center mb-8">
                 <h3 className="text-soccer-text text-lg font-bold mb-4">
@@ -92,10 +61,12 @@ export default function PricingTable() {
 
             {/* Family Pack */}
             <div className="flex flex-col items-center p-8">
-              <img
+              <Image
                 src="https://api.builder.io/api/v1/image/assets/TEMP/89604f44aa5b3271856f96f99ff76138b4b21fb5?width=504"
                 alt="A family of four enjoying a soccer practice in their backyard, with a training mat spread out and a tablet displaying a soccer training app"
                 className="w-64 h-64 object-cover rounded-lg mb-8"
+                width={256}
+                height={256}
               />
               <div className="text-center mb-8">
                 <h3 className="text-soccer-text text-lg font-bold mb-4">

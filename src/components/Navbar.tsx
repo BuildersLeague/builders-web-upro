@@ -12,21 +12,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  User,
-  LogOut,
-  LayoutDashboard,
-  Settings,
-  Database,
-  Menu,
-  X,
-} from "lucide-react";
+import { User, LogOut, LayoutDashboard } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
   const { user, signOut, loading } = useAuth();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const getInitials = (email: string) => {
     return email.charAt(0).toUpperCase();

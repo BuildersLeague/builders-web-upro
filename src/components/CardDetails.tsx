@@ -1,4 +1,5 @@
 import { CSSProperties, ReactElement } from "react";
+import Image from "next/image";
 
 /**
  * Properties for the CardDetails component
@@ -68,11 +69,13 @@ export default function CardDetails({
         </p>
       </div>
       {imgSrc ? (
-        <img
+        <Image
           src={imgSrc}
-          alt={`${imgSrc}_image`}
+          alt={`${title} image`}
           className={imgClassName}
-          style={imgStyle} // directly pass object here
+          style={imgStyle}
+          width={500}
+          height={300}
         />
       ) : (
         <div className="bg-white grow"></div>
