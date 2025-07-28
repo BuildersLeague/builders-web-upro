@@ -24,9 +24,8 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Performance optimizations
+  // Performance optimizations (without experimental features that might cause issues)
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ["framer-motion"],
   },
 
