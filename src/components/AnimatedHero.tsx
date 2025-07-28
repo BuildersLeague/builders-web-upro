@@ -106,7 +106,7 @@ export default function AnimatedHero() {
         >
           <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/8]">
             <Image
-              src="/images/hero/heroMobileBack.webp"
+              src="/images/hero/heroMobileBack.png"
               alt="U-Pro mobile app interface showing soccer training exercises and progress tracking"
               fill
               className="object-contain"
