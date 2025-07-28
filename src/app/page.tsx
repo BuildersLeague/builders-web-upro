@@ -22,7 +22,6 @@ export default function Home() {
       <TrainingPartner />
       <CallToActionPage />
       <TestimonialSection />
-
       <Sponsors />
     </main>
   );
