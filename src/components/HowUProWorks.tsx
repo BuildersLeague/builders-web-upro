@@ -45,7 +45,7 @@ export default function HowUProWorks(): ReactElement {
             description="U-Pro uses your phone's camera and our patent-pending AI
             to track real-time biomechanics. No wearables. No setup. Just
             hit record."
-            imgSrc="tracking.png"
+            imgSrc="/tracking.png"
             imgClassName=" lg:block rounded-lg w-full lg:w-[70%] mx-auto "
             contentClassName=" flex flex-col h-full gap-2"
           />
@@ -56,7 +56,7 @@ export default function HowUProWorks(): ReactElement {
             title="Level Up Skills"
             description="Each session adapts to your player's age and level. Earn XP by
                 completing challenges, improving form, and unlocking new drills."
-            imgSrc="level_up_skills.svg"
+            imgSrc="/level_up_skills.svg"
             imgClassName=" lg:block mx-auto w-60 lg:w-1/2 "
             headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full lg:w-1/2 justify-start items-center lg:items-start"
             contentClassName=" flex flex-col lg:flex-row  h-full"
@@ -67,7 +67,7 @@ export default function HowUProWorks(): ReactElement {
           <CardDetails
             title="Get Rewarded"
             description="Badges, cosmetics, leaderboards, and certificates turn training into a game. Kids stay motivated — and proud of their progress."
-            imgSrc="badges.svg"
+            imgSrc="/badges.svg"
             imgClassName=" lg:block w-[45%]"
             imgStyle={{
               WebkitMaskImage: `
@@ -92,7 +92,7 @@ export default function HowUProWorks(): ReactElement {
           <CardDetails
             title="Train Together"
             description="Designed for siblings, parents, and teammates to join in. Build healthy habits and memories that last beyond the game."
-            imgSrc="train_together.jpg"
+            imgSrc="/train_together.jpg"
             imgClassName="rounded-lg block lg:block w-full"
             headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full items-center lg:items-start"
             contentClassName="flex flex-col h-full gap-2"
