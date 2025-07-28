@@ -92,7 +92,7 @@ export function SignUpForm() {
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
             <Image
-              src="/uproLogo.jpg"
+              src="/uproLogo.svg"
               alt="U-Pro Logo"
               width={120}
               height={120}
@@ -114,7 +114,7 @@ export function SignUpForm() {
       <CardHeader className="text-center">
         <div className="flex justify-center mb-4">
           <Image
-            src="/uproLogo.jpg"
+            src="/uproLogo.svg"
             alt="U-Pro Logo"
             width={120}
             height={120}

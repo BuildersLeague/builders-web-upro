@@ -106,7 +106,7 @@ export default function AnimatedHero() {
         >
           <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/8]">
             <Image
-              src="/images/hero/heroMobile.webp"
+              src="/images/hero/heroMobileBack.webp"
               alt="U-Pro mobile app interface showing soccer training exercises and progress tracking"
               fill
               className="object-contain"
@@ -115,40 +115,17 @@ export default function AnimatedHero() {
               fetchPriority="high"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
             />
+            {/* Overlay U-Pro logo centered */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <Image
+                src="/uproLogo.svg"
+                alt="U-Pro logo"
+                width={128}
+                height={78}
+                className="w-32 h-auto"
+              />
+            </div>
           </div>
-        </motion.div>
-
-        {/* Download badges */}
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 mt-12 lg:mt-16 mb-12"
-          variants={itemVariants}
-        >
-          <a
-            href="#"
-            className="transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#020d02] rounded-lg"
-            aria-label="Download U-Pro from the App Store"
-          >
-            <Image
-              src="/appleStore.svg"
-              alt="Download on the App Store"
-              width={180}
-              height={53}
-              className="h-12 sm:h-14 w-auto"
-            />
-          </a>
-          <a
-            href="#"
-            className="transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#020d02] rounded-lg"
-            aria-label="Get U-Pro on Google Play"
-          >
-            <Image
-              src="/googlePlay.svg"
-              alt="Get it on Google Play"
-              width={180}
-              height={53}
-              className="h-12 sm:h-14 w-auto"
-            />
-          </a>
         </motion.div>
       </motion.div>
     </section>
