@@ -14,7 +14,6 @@ import {
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { User, LogOut, LayoutDashboard } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 
 export function Navbar() {
   const { user, signOut, loading } = useAuth();
