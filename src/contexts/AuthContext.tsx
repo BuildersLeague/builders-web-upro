@@ -1,20 +1,28 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { User, Session, AuthError } from "@supabase/supabase-js";
+import {
+  User,
+  Session,
+  AuthError,
+  PostgrestError,
+} from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 
 interface AuthContextType {
   user: User | null;
   session: Session | null;
   loading: boolean;
-  signIn: (email: string, password: string) => Promise<{ error: any }>;
+  signIn: (
+    email: string,
+    password: string
+  ) => Promise<{ error: AuthError | null }>;
   signUp: (
     email: string,
     password: string,
     firstName: string,
     lastName: string
-  ) => Promise<{ error: any }>;
+  ) => Promise<{ error: AuthError | PostgrestError | null }>;
   signOut: () => Promise<void>;
 }
 
@@ -85,16 +93,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const { error: userError } = await supabase.from("users").insert({
       account_id: accountId,
       name: `${firstName} ${lastName}`,
-      gender: "other", 
+      gender: "other",
       age_group: 1,
-      subscription_type: 1, 
+      subscription_type: 1,
     });
-      console.error("User insert error:", userError);
+    console.error("User insert error:", userError);
     return { error: userError };
-
   };
-
-
 
   const signOut = async () => {
     await supabase.auth.signOut();

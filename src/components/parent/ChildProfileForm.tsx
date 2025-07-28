@@ -277,7 +277,6 @@ export function ChildProfileForm({
               />
             </div>
 
-
             {/* Profile Picture */}
             <div className="space-y-2">
               <Label htmlFor="profile_picture">Profile Picture URL</Label>
