@@ -12,29 +12,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  User,
-  LogOut,
-  LayoutDashboard,
-  Settings,
-  Database,
-  Menu,
-  X,
-} from "lucide-react";
+import { User, LogOut, LayoutDashboard } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 export function Navbar() {
   const { user, signOut, loading } = useAuth();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const getInitials = (email: string) => {
     return email.charAt(0).toUpperCase();
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  // const toggleMobileMenu = () => {
+  //   setIsMobileMenuOpen(!isMobileMenuOpen);
+  // };
 
   return (
     <>
@@ -165,7 +157,7 @@ export function Navbar() {
             )}
 
             {/* Mobile menu button */}
-            <Button
+            {/* <Button
               variant="ghost"
               size="sm"
               className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black"
@@ -183,80 +175,9 @@ export function Navbar() {
               ) : (
                 <Menu className="h-6 w-6 text-white" />
               )}
-            </Button>
+            </Button> */}
           </div>
         </div>
-
-        {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div
-            id="mobile-menu"
-            className="lg:hidden bg-black border-t border-white/20"
-            role="menu"
-            aria-label="Mobile navigation menu"
-          >
-            <div
-              className="px-4 py-6 space-y-4"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {/* Mobile Navigation Links */}
-              <div className="space-y-3" role="none">
-                <Link
-                  href="#features"
-                  className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
-                  role="menuitem"
-                >
-                  Features
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
-                  role="menuitem"
-                >
-                  Pricing
-                </Link>
-                <Link
-                  href="#contact"
-                  className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
-                  role="menuitem"
-                >
-                  Contact
-                </Link>
-                <Link
-                  href="/partners"
-                  className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
-                  role="menuitem"
-                >
-                  Partners
-                </Link>
-                <Link
-                  href="#testimonials"
-                  className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
-                  role="menuitem"
-                >
-                  Testimonials
-                </Link>
-                <Link
-                  href="#experts"
-                  className="block text-white hover:text-[#00FF3C] py-2 text-base focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black rounded px-2"
-                  role="menuitem"
-                >
-                  Trusted By Experts
-                </Link>
-              </div>
-
-              {/* Mobile Download App */}
-              <div className="pt-4 border-t border-white/20" role="none">
-                <Link
-                  href="#contact"
-                  className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                >
-                  Download app
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
     </>
   );

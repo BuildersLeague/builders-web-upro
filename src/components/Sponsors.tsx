@@ -18,15 +18,15 @@ export function Sponsors() {
   return (
     <section className="bg-[#020d02] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-8 md:gap-12">
+        <div className="flex flex-wrap items-center justify-center sm:justify-evenly lg:justify-between gap-6 sm:gap-8 md:gap-12">
           {sponsors.map((sponsor, index) => (
-            <div key={index} className="flex justify-center">
+            <div key={index} className="flex justify-center flex-shrink-0">
               <Image
                 src={sponsor.src}
                 alt={sponsor.alt}
                 width={150}
                 height={60}
-                className="h-10 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain"
               />
             </div>
           ))}

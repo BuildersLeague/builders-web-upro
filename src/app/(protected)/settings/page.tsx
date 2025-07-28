@@ -1,6 +1,5 @@
 "use client";
 
-import { useAuth } from "@/contexts/AuthContext";
 import {
   Card,
   CardContent,
@@ -11,8 +10,6 @@ import {
 import { Button } from "@/components/ui/button";
 
 export default function SettingsPage() {
-  const { signOut } = useAuth();
-
   return (
     <div className="min-h-[calc(100vh-4rem)] p-8">
       <div className="max-w-2xl mx-auto">

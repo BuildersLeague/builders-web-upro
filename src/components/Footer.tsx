@@ -12,10 +12,10 @@ export default function Footer() {
 
         <div className="pt-8 pb-12 flex flex-col gap-8">
           {/* Main footer content */}
-          <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
             {/* Logo section */}
             <div className="flex flex-col justify-between h-auto lg:h-full">
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 justify-center lg:justify-start">
                 <Image
                   src="https://api.builder.io/api/v1/image/assets/TEMP/56a2730fbb603b6d0b96d5b84161d7698a87188c?width=142"
                   alt="U-Pro Logo"
@@ -27,7 +27,7 @@ export default function Footer() {
             </div>
 
             {/* Navigation links */}
-            <div className="flex flex-wrap items-center gap-4 md:gap-6 font-public-sans text-sm md:text-base">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-6 font-public-sans text-sm md:text-base">
               <Link
                 href="/about"
                 className="text-white hover:text-upro-light-green transition-colors font-normal"
@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
 
             {/* Social media icons */}
-            <div className="flex items-center gap-3.5">
+            <div className="flex items-center justify-center lg:justify-start gap-3.5">
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <svg
                   width="24"

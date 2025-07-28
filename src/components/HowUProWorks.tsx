@@ -1,4 +1,5 @@
-import { CSSProperties, ReactElement } from "react";
+import { ReactElement } from "react";
+import CardDetails from "./CardDetails";
 
 export default function HowUProWorks(): ReactElement {
   const cardClass =
@@ -41,7 +42,7 @@ export default function HowUProWorks(): ReactElement {
         <div className={`col-span-3  ${cardClass}`}>
           <CardDetails
             title="Capture Movement"
-            description="U-Pro uses your phone’s camera and our patent-pending AI
+            description="U-Pro uses your phone's camera and our patent-pending AI
             to track real-time biomechanics. No wearables. No setup. Just
             hit record."
             imgSrc="tracking.png"
@@ -49,20 +50,18 @@ export default function HowUProWorks(): ReactElement {
             contentClassName=" flex flex-col h-full gap-2"
           />
         </div>
-
         {/* Level Up Skills */}
         <div className={`col-span-3  ${cardClass} `}>
           <CardDetails
             title="Level Up Skills"
-            description="Each session adapts to your player’s age and level. Earn XP by
+            description="Each session adapts to your player's age and level. Earn XP by
                 completing challenges, improving form, and unlocking new drills."
             imgSrc="level_up_skills.svg"
             imgClassName=" lg:block mx-auto w-60 lg:w-1/2 "
-            headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full lg:w-1/2 justify-start items-start"
+            headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full lg:w-1/2 justify-start items-center lg:items-start"
             contentClassName=" flex flex-col lg:flex-row  h-full"
           />
-        </div>
-
+        </div>{" "}
         {/* Get Rewarded */}
         <div className={`col-span-3 lg:col-span-4 ${cardClass}`}>
           <CardDetails
@@ -84,102 +83,22 @@ export default function HowUProWorks(): ReactElement {
               WebkitMaskRepeat: "no-repeat",
               maskRepeat: "no-repeat",
             }}
-            headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full lg:w-[55%]"
-            contentClassName="flex flex-row lg:flex-row-reverse h-full justify-start items-start gap-5"
+            headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full lg:w-[55%] items-center lg:items-start"
+            contentClassName="flex flex-col lg:flex-row-reverse h-full justify-start items-center lg:items-start gap-5"
           />
         </div>
-
         {/* Train Together */}
         <div className={`col-span-3 lg:col-span-2 ${cardClass}`}>
           <CardDetails
             title="Train Together"
             description="Designed for siblings, parents, and teammates to join in. Build healthy habits and memories that last beyond the game."
             imgSrc="train_together.jpg"
-            imgClassName="rounded-lg hidden lg:block"
+            imgClassName="rounded-lg block lg:block w-full"
+            headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full items-center lg:items-start"
+            contentClassName="flex flex-col h-full gap-2"
           />
         </div>
       </div>
-    </div>
-  );
-}
-
-/**
- * Properties for the CardDetails component
- * @typedef {Object} CardDetailsProps
- * @property {string} title - The title of the card
- * @property {string} description - The description of the card
- * @property {string} imgSrc - The source of the image
- * @property {string} imgClassName - The class name of the image
- * @property {React.CSSProperties} imgStyle - The style of the image
- */
-type CardDetailsProps = {
-  title: string;
-  description: string;
-  imgSrc?: string;
-  imgClassName?: string;
-  imgStyle?: CSSProperties;
-  headerClassName?: string;
-  contentClassName?: string;
-};
-
-/**
- * A component to display a card with a title, description, and an optional image.
- * @param {string} title - The title of the card
- * @param {string} description - The description of the card
- * @param {string} [imgSrc] - The source of the image
- * @param {string} [imgClassName=""] - The class name of the image
- * @param {React.CSSProperties} [imgStyle={}] - The style of the image
- * @param {string} [headerClassName=""] - The class name of the header
- * @param {string} [contentClassName=""] - The class name of the content
- * @returns {ReactElement} - A React element representing the component
- */
-function CardDetails({
-  title,
-  description,
-  imgSrc,
-  imgClassName = "",
-  imgStyle = {},
-  headerClassName = "",
-  contentClassName = "",
-}: CardDetailsProps): ReactElement {
-  return (
-    <div
-      className={`transition-all duration-500 ease-out ${contentClassName || "flex flex-col h-full gap-5"}`}
-    >
-      <div className={`${headerClassName || "px-6 py-4 flex flex-col gap-2"}`}>
-        <h1
-          className="font-bold text-white text-2xl mb-2"
-          style={{
-            fontFamily: "THE BOLD FONT",
-            fontWeight: 900,
-            color: "#D7E4D7",
-          }}
-        >
-          {title}
-        </h1>
-        <p
-          className="text-white font-bold"
-          style={{
-            fontFamily:
-              "Montserrat, -apple-system, Roboto, Helvetica, sans-serif",
-            color: "#D7E4D7",
-            letterSpacing: "-0.12px",
-            lineHeight: "1.33",
-          }}
-        >
-          {description}
-        </p>
-      </div>
-      {imgSrc ? (
-        <img
-          src={imgSrc}
-          alt={`${imgSrc}_image`}
-          className={imgClassName}
-          style={imgStyle} // directly pass object here
-        />
-      ) : (
-        <div className="bg-white grow"></div>
-      )}
     </div>
   );
 }

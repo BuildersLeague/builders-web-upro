@@ -1,7 +1,6 @@
-import ElevatorPitchSection from "@/components/ElevatorPitchSection";
-import Hero from "@/components/Hero";
-import HowUProWorks from "@/components/HowUProWorks";
-import { TestimonialSection } from "@/components/TestimonialSection";
+import AnimatedHero from "@/components/AnimatedHero";
+import AnimatedHowUProWorks from "@/components/AnimatedHowUProWorks";
+import { AnimatedTestimonialSection } from "@/components/AnimatedTestimonialSection";
 import TrustedByExpertsSection from "@/components/TrustedByExpertsSection";
 import CallToActionPage from "@/components/CallToActionPage";
 import { TrainingPartner } from "@/components/TrainingPartner";
@@ -16,14 +15,12 @@ export default function Home() {
       role="main"
       aria-label="U-Pro Soccer homepage"
     >
-      <Hero />
-      <HowUProWorks />
-      {/* <ElevatorPitchSection /> */}
+      <AnimatedHero />
+      <AnimatedHowUProWorks />
       <TrustedByExpertsSection />
       <TrainingPartner />
       <CallToActionPage />
-      <TestimonialSection />
-
+      <AnimatedTestimonialSection />
       <Sponsors />
     </main>
   );
