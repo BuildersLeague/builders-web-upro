@@ -37,7 +37,7 @@ export default function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-white font-bold font-sans text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl leading-snug max-w-4xl mx-auto mb-12 lg:mb-20">
+          <p className="text-white font-bold font-sans text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl leading-snug max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto mb-12 lg:mb-20">
             U-Pro Soccer turns your living room into a smart training ground —
             powered by AI, fueled by fun, and designed to keep kids moving and
             improving.
@@ -45,14 +45,14 @@ export default function Hero() {
 
           {/* Buttons */}
           <div
-            className="flex flex-row gap-12 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-12 justify-center items-center"
             role="group"
             aria-label="Hero actions"
           >
             <Button
               variant="default"
               size="lg"
-              className="min-w-48"
+              className="min-w-48 w-full sm:w-auto"
               type="button"
               aria-describedby="hero-heading"
             >
@@ -61,7 +61,7 @@ export default function Hero() {
             <Button
               variant="default"
               size="lg"
-              className="min-w-64"
+              className="min-w-64 w-full sm:w-auto"
               type="button"
               aria-describedby="hero-heading"
             >
@@ -72,48 +72,23 @@ export default function Hero() {
 
         {/* Mobile phone mockup */}
         <div
-          className="mt-16 lg:mt-24 flex justify-center "
+          className="mt-16 lg:mt-24 w-64 sm:w-80 lg:w-96 xl:w-[30rem] h-[21.5rem] sm:h-[27rem] lg:h-[32.5rem] xl:h-[40.5rem] bg-black rounded-t-3xl lg:rounded-t-[3rem] relative mx-auto"
+          style={{
+            border: "1.5px solid rgba(145, 182, 145, 0.20)",
+            borderBottom: "none",
+          }}
           role="img"
           aria-label="Mobile app preview"
         >
-          <div className="relative">
-            {/* Phone container */}
-            <div
-              className=" w-64 sm:w-80 lg:w-96 xl:w-[32rem] h-[24rem] sm:h-[32rem] lg:h-[40rem] xl:h-[48rem] bg-black rounded-t-3xl lg:rounded-t-[3rem] relative"
-              style={{
-                border: "1.5px solid rgba(145, 182, 145, 0.20)",
-                borderBottom: "none",
-              }}
-              role="presentation"
-            >
-              {/* U-Pro logo in phone */}
-              <div className="absolute top-12 sm:top-16 lg:top-20 left-1/2 transform -translate-x-1/2">
-                <Image
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/39a9e7d50e4bcde9141bfcd2f9c08d5e8a3e0587?width=539"
-                  alt="U-Pro Soccer application logo displayed on mobile device"
-                  className="w-48 sm:w-56 lg:w-64 xl:w-72 h-auto"
-                  width={539}
-                  height={200}
-                  priority
-                />
-              </div>
-
-              {/* Mock interface elements */}
-              <div
-                className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6"
-                aria-hidden="true"
-              >
-                {/* Progress bars */}
-                <div
-                  className="w-full h-8 lg:h-10 bg-white bg-opacity-30 rounded-2xl mb-8 lg:mb-12"
-                  role="presentation"
-                />
-                <div
-                  className="w-4/5 h-8 lg:h-10 bg-white bg-opacity-30 rounded-2xl mx-auto mb-16 lg:mb-20"
-                  role="presentation"
-                />
-              </div>
-            </div>
+          {/* U-Pro logo in phone */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero/heroMobile.svg"
+              alt="U-Pro Soccer application logo displayed on mobile device"
+              className="w-full h-full object-cover"
+              fill
+              priority
+            />
           </div>
         </div>
       </div>

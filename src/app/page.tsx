@@ -18,7 +18,6 @@ export default function Home() {
     >
       <Hero />
       <HowUProWorks />
-      {/* <ElevatorPitchSection /> */}
       <TrustedByExpertsSection />
       <TrainingPartner />
       <CallToActionPage />
