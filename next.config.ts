@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
+const isNetlify = process.env.IS_NETLIFY === "true";
 
 const nextConfig: NextConfig = {
+
   // output: "standalone",
 
+
+
+  output: isNetlify ? "export" : undefined,
 
   images: {
     remotePatterns: [
