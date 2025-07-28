@@ -181,6 +181,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Set explicit font-size for h1 to maintain consistency as UA defaults change */
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 @layer utilities {

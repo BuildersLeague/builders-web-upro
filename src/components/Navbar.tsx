@@ -57,9 +57,9 @@ export function Navbar() {
             <Image
               src="/uproLogo.svg"
               alt="U-Pro logo"
-              width={48}
-              height={48}
-              className="h-20 w-20"
+              width={300}
+              height={117}
+              className="h-12 w-auto object-contain"
             />
           </Link>
 
