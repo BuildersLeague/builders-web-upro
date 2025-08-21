@@ -12,11 +12,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { User, LogOut, LayoutDashboard } from "lucide-react";
+import { LayoutDashboard, LogOut, User } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const { user, signOut, loading } = useAuth();
+  const pathname = usePathname();
   // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const getInitials = (email: string) => {
@@ -51,28 +53,52 @@ export function Navbar() {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
           {/* Left - brand */}
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/uproLogo.svg"
-              alt="U-Pro logo"
-              width={300}
-              height={117}
-              className="h-12 w-auto object-contain"
-            />
-          </Link>
+          <div className="flex-1 flex justify-start">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/uproLogo.svg"
+                alt="U-Pro logo"
+                width={300}
+                height={117}
+                className="h-12 w-auto object-contain"
+              />
+            </Link>
+          </div>
 
-          {/* Right - secondary actions */}
-          <div className="flex items-center gap-4 lg:gap-6">
-            {/* Pricing link for desktop */}
+          <div className="flex-1 flex justify-center gap-8">
+            <Link
+              href="/"
+              className={`hidden lg:inline text-sm lg:text-base ${
+                pathname === "/" ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
+              }`}
+              role="menuitem"
+            >
+              Home
+            </Link>
             <Link
               href="/pricing"
-              className="hidden lg:inline text-white hover:text-[#00FF3C] text-sm lg:text-base"
+              className={`hidden lg:inline text-sm lg:text-base ${
+                pathname === "/pricing" ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
+              }`}
               role="menuitem"
             >
               Pricing
             </Link>
+            <Link
+              href="/partners"
+              className={`hidden lg:inline text-sm lg:text-base ${
+                pathname === "/partners" ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
+              }`}
+              role="menuitem"
+            >
+              Partners
+            </Link>
+          </div>
+
+          {/* Right - secondary actions */}
+          <div className="flex-1 flex justify-end items-center gap-4 lg:gap-6">
             {/* Auth Section */}
             {loading ? (
               <div className="w-8 h-8 animate-pulse bg-white/20 rounded-full" />
