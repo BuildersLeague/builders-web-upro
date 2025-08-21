@@ -12,22 +12,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { LayoutDashboard, LogOut, User } from "lucide-react";
+import { LayoutDashboard, LogOut, User, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 export function Navbar() {
   const { user, signOut, loading } = useAuth();
   const pathname = usePathname();
-  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const getInitials = (email: string) => {
     return email.charAt(0).toUpperCase();
   };
 
-  // const toggleMobileMenu = () => {
-  //   setIsMobileMenuOpen(!isMobileMenuOpen);
-  // };
+  const isActiveLink = (path: string) => {
+    return pathname === path;
+  };
 
   return (
     <>
@@ -54,50 +54,73 @@ export function Navbar() {
         aria-label="Main navigation"
       >
         <div className="container mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
-          {/* Left - brand */}
-          <div className="flex-1 flex justify-start">
+
+          <div className="flex-1 flex justify-start items-center gap-4">
+            <div className="flex items-center justify-center lg:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="relative h-12 w-12 rounded-full hover:bg-white/10"
+                  >
+                    <Menu className="h-8 w-8 text-white" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  className="w-56 bg-black border-white/20 m-4"
+                  align="end"
+                  forceMount
+                >
+                  {
+                    siteConfig.navItems.map((navItem) => (
+                     <div key={navItem.label}>
+                       <DropdownMenuLabel className="font-normal text-white">
+                         <Link
+                           href={navItem.href}
+                           className={`text-sm lg:text-base ${
+                             isActiveLink(navItem.href) ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
+                           }`}
+                           role="menuitem"
+                         >
+                           {navItem.label}
+                         </Link>
+                       </DropdownMenuLabel>
+                     </div>
+                    ))
+                  }
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+            </div>
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/uproLogo.svg"
                 alt="U-Pro logo"
                 width={300}
                 height={117}
-                className="h-12 w-auto object-contain"
+                className="h-8 lg:h-12 w-auto object-contain"
               />
             </Link>
           </div>
 
-          <div className="flex-1 flex justify-center gap-8">
-            <Link
-              href="/"
-              className={`hidden lg:inline text-sm lg:text-base ${
-                pathname === "/" ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
-              }`}
-              role="menuitem"
-            >
-              Home
-            </Link>
-            <Link
-              href="/pricing"
-              className={`hidden lg:inline text-sm lg:text-base ${
-                pathname === "/pricing" ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
-              }`}
-              role="menuitem"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/partners"
-              className={`hidden lg:inline text-sm lg:text-base ${
-                pathname === "/partners" ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
-              }`}
-              role="menuitem"
-            >
-              Partners
-            </Link>
+          {/* Center - Desktop navigation links */}
+          <div className="flex-1 hidden lg:flex justify-center gap-8">
+            {
+              siteConfig.navItems.map((navItem) => (
+                <Link key={navItem.label}
+                  href={navItem.href}
+                  className={`text-sm lg:text-base ${
+                    isActiveLink(navItem.href) ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
+                  }`}
+                  role="menuitem"
+                >
+                  {navItem.label}
+                </Link>
+              ))
+            }
           </div>
 
-          {/* Right - secondary actions */}
+          {/* Right - Secondary actions */}
           <div className="flex-1 flex justify-end items-center gap-4 lg:gap-6">
             {/* Auth Section */}
             {loading ? (
@@ -167,7 +190,9 @@ export function Navbar() {
 
                 <Link
                   href="/auth?mode=signin"
-                  className="text-white hover:text-[#00FF3C] text-sm lg:text-base"
+                  className={`text-sm lg:text-base ${
+                    pathname.startsWith("/auth") ? "text-[#00FF3C]" : "text-white hover:text-[#00FF3C]"
+                  }`}
                 >
                   Log in
                 </Link>
@@ -180,30 +205,10 @@ export function Navbar() {
                 </Button>
               </>
             )}
-
-            {/* Mobile menu button */}
-            {/* <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-upro-green focus:ring-offset-2 focus:ring-offset-black"
-              onClick={toggleMobileMenu}
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label={
-                isMobileMenuOpen
-                  ? "Close navigation menu"
-                  : "Open navigation menu"
-              }
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-white" />
-              ) : (
-                <Menu className="h-6 w-6 text-white" />
-              )}
-            </Button> */}
           </div>
         </div>
       </nav>
+
     </>
   );
 }
