@@ -78,7 +78,7 @@ const cardVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
-export function AnimatedTestimonialSection() {
+export function Comments() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -104,14 +104,14 @@ export function AnimatedTestimonialSection() {
     <section
       ref={ref}
       id="testimonials"
-      className="w-full py-16 md:py-20 lg:py-24 bg-[#020d02]"
+      className="container bg-[#020d02]"
       role="region"
       aria-labelledby="testimonials-heading"
     >
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-8xl">
         <motion.h2
           id="testimonials-heading"
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 text-white"
+          className="mb-12 text-center text-3xl font-bold text-white md:mb-16 md:text-4xl lg:text-5xl"
           style={{ fontFamily: "THE BOLD FONT" }}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -147,7 +147,7 @@ export function AnimatedTestimonialSection() {
             aria-label="Scroll through testimonials using arrow keys"
           >
             <motion.div
-              className="flex gap-6 pb-4 px-16"
+              className="flex gap-6 px-16 pb-4"
               style={{ width: "max-content" }}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -156,17 +156,14 @@ export function AnimatedTestimonialSection() {
               {testimonials.map(testimonial => (
                 <motion.div key={testimonial.id} variants={cardVariants}>
                   <Card
-                    className="text-white p-6 rounded-xl border-0 flex-shrink-0 w-80 shadow-lg backdrop-blur-sm focus-within:ring-2 focus-within:ring-upro-green focus-within:ring-offset-2 focus-within:ring-offset-[#182618]"
-                    style={{
-                      backgroundColor: "#182618",
-                    }}
+                    className="text-white h-44 p-6 bg-green-900 rounded-xl border-0 flex-shrink-0 w-80 shadow-lg backdrop-blur-sm focus-within:ring-2 focus-within:ring-upro-green focus-within:ring-offset-2 focus-within:ring-offset-[#182618]"
                     role="article"
                     aria-labelledby={`testimonial-${testimonial.id}-name`}
                   >
                     <CardContent className="p-0 space-y-4">
                       {/* Avatar and Info */}
                       <header className="flex items-center space-x-4">
-                        <Avatar className="size-12 ring-2 ring-white/20">
+                        <Avatar className="ring-2 ring-white/20 size-12">
                           {testimonial.avatar && (
                             <AvatarImage
                               src={testimonial.avatar}
@@ -174,7 +171,7 @@ export function AnimatedTestimonialSection() {
                               loading="lazy"
                             />
                           )}
-                          <AvatarFallback className="bg-gray-700 text-white text-sm font-medium">
+                          <AvatarFallback className="bg-gray-700 text-sm font-medium text-white">
                             {testimonial.name
                               .split(" ")
                               .map(n => n[0])
@@ -186,11 +183,11 @@ export function AnimatedTestimonialSection() {
                         <div className="flex-1">
                           <h3
                             id={`testimonial-${testimonial.id}-name`}
-                            className="font-semibold text-white text-sm"
+                            className="text-sm font-semibold text-white"
                           >
                             {testimonial.name}
                           </h3>
-                          <p className="text-gray-300 text-xs">
+                          <p className="text-xs text-gray-300">
                             {testimonial.role}
                           </p>
                         </div>
@@ -200,15 +197,15 @@ export function AnimatedTestimonialSection() {
                       <div className="flex space-x-4">
                         {/* Vertical line positioned below avatar */}
                         <div
-                          className="w-12 flex justify-center"
+                          className="flex w-12 justify-center"
                           aria-hidden="true"
                         >
-                          <div className="border-l border-white/20 h-full" />
+                          <div className="h-full border-l border-white/20" />
                         </div>
 
                         {/* Testimonial Content */}
                         <blockquote
-                          className="flex-1 text-gray-200 text-sm leading-relaxed"
+                          className="flex-1 text-sm leading-relaxed text-gray-200"
                           cite={`Testimonial from ${testimonial.name}`}
                         >
                           &ldquo;{testimonial.content}&rdquo;

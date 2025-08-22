@@ -55,8 +55,8 @@ export default function CardDetails({
         >
           {title}
         </h1>
-        <p
-          className="text-white font-bold text-center lg:text-left"
+        <div
+          className="text-white font-bold text-center lg:text-left flex items-center h-full"
           style={{
             fontFamily:
               "Montserrat, -apple-system, Roboto, Helvetica, sans-serif",
@@ -66,7 +66,7 @@ export default function CardDetails({
           }}
         >
           {description}
-        </p>
+        </div>
       </div>
       {imgSrc ? (
         <Image

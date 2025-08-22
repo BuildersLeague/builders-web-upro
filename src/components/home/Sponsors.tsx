@@ -16,8 +16,7 @@ const sponsors = [
 
 export function Sponsors() {
   return (
-    <section className="bg-[#020d02] py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="wrapper">
         <div className="flex flex-wrap items-center justify-center sm:justify-evenly lg:justify-between gap-6 sm:gap-8 md:gap-12">
           {sponsors.map((sponsor, index) => (
             <div key={index} className="flex justify-center flex-shrink-0">
@@ -31,7 +30,6 @@ export function Sponsors() {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 }

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import CardDetails from "./CardDetails";
+import CardDetails from "./home/CardDetails";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },

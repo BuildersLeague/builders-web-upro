@@ -3,8 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-upro-background px-0 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto">
+    <footer className="wrapper">
         {/* Top border line */}
         <div className="h-0.5 w-full relative">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-upro-green-border/20 to-transparent" />
@@ -119,7 +118,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
     </footer>
   );
 }
