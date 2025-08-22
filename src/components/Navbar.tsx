@@ -53,7 +53,7 @@ export function Navbar() {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="mx-auto flex h-16 items-center px-8">
+        <div className="mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
           <div className="flex flex-1 items-center justify-start gap-4">
             <div className="flex items-center justify-center lg:hidden">
               <DropdownMenu>
