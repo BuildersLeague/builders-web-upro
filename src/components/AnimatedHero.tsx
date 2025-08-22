@@ -29,7 +29,7 @@ const heroImageVariants = {
 export default function AnimatedHero() {
   return (
     <section
-      className="relative overflow-hidden "
+      className="relative overflow-hidden"
       role="banner"
       aria-labelledby="hero-heading"
     >
@@ -45,7 +45,7 @@ export default function AnimatedHero() {
 
       {/* Main content */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -54,7 +54,7 @@ export default function AnimatedHero() {
         <div className="mt-12 text-center">
           <motion.h1
             id="hero-heading"
-            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-tight tracking-tight mb-8 lg:mb-12"
+            className="mb-8 text-4xl font-black leading-tight tracking-tight sm:text-4xl md:text-5xl lg:mb-12 lg:text-6xl xl:text-7xl 2xl:text-8xl"
             style={{
               fontFamily: "THE BOLD FONT",
               fontWeight: 900,
@@ -70,7 +70,7 @@ export default function AnimatedHero() {
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed"
+            className="mx-auto mb-8 max-w-4xl text-lg leading-relaxed text-white/90 sm:text-xl md:text-2xl lg:mb-12 lg:text-3xl"
             variants={itemVariants}
           >
             Train like a pro with personalized soccer coaching, skill
@@ -78,20 +78,19 @@ export default function AnimatedHero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 lg:mb-20"
+            className="mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row lg:mb-20"
             variants={itemVariants}
           >
             <Button
               size="lg"
-              className="bg-[#0D9447] hover:bg-[#0a7a3a] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="w-52 bg-[#0D9447] hover:bg-[#0a7a3a] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               aria-label="Download U-Pro app and start training"
             >
               Start Training Today
             </Button>
             <Button
-              variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#020d02] font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+              className="w-52 bg-[#0D9447] hover:bg-[#0a7a3a] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               aria-label="Watch demo video of U-Pro in action"
             >
               Watch Demo
@@ -101,7 +100,7 @@ export default function AnimatedHero() {
 
         {/* Hero Image */}
         <motion.div
-          className="relative w-full max-w-6xl mx-auto"
+          className="relative mx-auto w-full max-w-6xl"
           variants={heroImageVariants}
         >
           <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[16/8]">
@@ -116,13 +115,13 @@ export default function AnimatedHero() {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
             />
             {/* Overlay U-Pro logo centered */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
               <Image
                 src="/uproLogo.svg"
                 alt="U-Pro logo"
                 width={128}
                 height={78}
-                className="w-32 h-auto"
+                className="h-auto w-32"
               />
             </div>
           </div>
