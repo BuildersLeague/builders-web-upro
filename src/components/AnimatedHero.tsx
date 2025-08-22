@@ -66,7 +66,8 @@ export default function AnimatedHero() {
             }}
             variants={itemVariants}
           >
-            Level Up Your Soccer Skills at Home
+            Level Up Your Soccer Skills<br />
+            at Home
           </motion.h1>
 
           <motion.p

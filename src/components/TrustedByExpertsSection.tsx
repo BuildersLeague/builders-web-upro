@@ -4,11 +4,10 @@ export default function TrustedByExpertsSection() {
   return (
     <section
       id="experts"
-      className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[#020d02]"
+      className="wrapper"
       role="region"
       aria-labelledby="experts-heading"
     >
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-24">
           {/* Text Content */}
           <div className="flex-1 space-y-6 lg:space-y-10 text-center lg:text-left">
@@ -50,7 +49,7 @@ export default function TrustedByExpertsSection() {
             <Image
               src="/images/TrustedByExpertsPhotos/kidAdultPractice.svg"
               alt="Child practicing soccer drills in a bright living room with a professional coach demonstrating techniques, showcasing U-Pro's expert-backed training approach"
-              className="w-full h-auto rounded-xl lg:rounded-3xl shadow-lg"
+              className="w-full h-auto rounded-lg shadow-lg"
               width={624}
               height={485}
               loading="lazy"
@@ -60,7 +59,6 @@ export default function TrustedByExpertsSection() {
             />
           </div>
         </div>
-      </div>
     </section>
   );
 }

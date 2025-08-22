@@ -1,5 +1,4 @@
 import AnimatedHero from "@/components/AnimatedHero";
-import AnimatedHowUProWorks from "@/components/AnimatedHowUProWorks";
 import { AnimatedTestimonialSection } from "@/components/AnimatedTestimonialSection";
 import TrustedByExpertsSection from "@/components/TrustedByExpertsSection";
 import CallToActionPage from "@/components/CallToActionPage";
@@ -12,7 +11,7 @@ export default function Home() {
   return (
     <main
       id="main-content"
-      className="bg-[#020d02]"
+      className="bg-[#020d02] flex flex-col gap-16"
       role="main"
       aria-label="U-Pro Soccer homepage"
     >

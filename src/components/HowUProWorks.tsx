@@ -6,7 +6,7 @@ export default function HowUProWorks(): ReactElement {
     "bg-lime-950/70 rounded-lg overflow-hidden flex flex-col h-auto lg:h-96";
 
   return (
-    <div className="flex flex-col gap-5 bg-black h-auto px-4 sm:px-6 lg:px-8">
+    <div className="wrapper flex flex-col gap-5 bg-black h-auto">
       <div className="flex flex-col gap-10 mt-20 lg:mt-40 mb-10 max-w-5xl items-center mx-auto">
         <h1
           className="text-center font-bold text-white text-3xl md:text-5xl transition-all duration-1000 ease-out"

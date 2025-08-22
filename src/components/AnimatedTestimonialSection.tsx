@@ -104,11 +104,11 @@ export function AnimatedTestimonialSection() {
     <section
       ref={ref}
       id="testimonials"
-      className="w-full py-16 md:py-20 lg:py-24 bg-[#020d02]"
+      className="container bg-[#020d02]"
       role="region"
       aria-labelledby="testimonials-heading"
     >
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto ">
         <motion.h2
           id="testimonials-heading"
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16 text-white"

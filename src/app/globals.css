@@ -4,9 +4,8 @@
 /* Custom Font Definition */
 @font-face {
   font-family: "THE BOLD FONT";
-  src:
-    url("/fonts/THE-BOLD-FONT.woff") format("woff"),
-    url("/fonts/THE-BOLD-FONT.ttf") format("truetype");
+  src: url("/fonts/THE-BOLD-FONT.woff") format("woff"),
+  url("/fonts/THE-BOLD-FONT.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -49,23 +48,18 @@
 
   --font-sans: Montserrat, sans-serif;
   --font-serif: Lato, sans-serif;
-  --font-mono:
-    "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo,
+  Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --radius: 0.625rem;
 
   --shadow-2xs: 0 1px 3px 0px oklch(0 0 0 / 0.05);
   --shadow-xs: 0 1px 3px 0px oklch(0 0 0 / 0.05);
-  --shadow-sm:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
   --shadow: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
-  --shadow-md:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 2px 4px -1px oklch(0 0 0 / 0.1);
-  --shadow-lg:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 4px 6px -1px oklch(0 0 0 / 0.1);
-  --shadow-xl:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 8px 10px -1px oklch(0 0 0 / 0.1);
+  --shadow-md: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 2px 4px -1px oklch(0 0 0 / 0.1);
+  --shadow-lg: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 4px 6px -1px oklch(0 0 0 / 0.1);
+  --shadow-xl: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 8px 10px -1px oklch(0 0 0 / 0.1);
   --shadow-2xl: 0 1px 3px 0px oklch(0 0 0 / 0.25);
 }
 
@@ -104,15 +98,11 @@
 
   --shadow-2xs: 0 1px 3px 0px oklch(0 0 0 / 0.05);
   --shadow-xs: 0 1px 3px 0px oklch(0 0 0 / 0.05);
-  --shadow-sm:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
   --shadow: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
-  --shadow-md:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 2px 4px -1px oklch(0 0 0 / 0.1);
-  --shadow-lg:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 4px 6px -1px oklch(0 0 0 / 0.1);
-  --shadow-xl:
-    0 1px 3px 0px oklch(0 0 0 / 0.1), 0 8px 10px -1px oklch(0 0 0 / 0.1);
+  --shadow-md: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 2px 4px -1px oklch(0 0 0 / 0.1);
+  --shadow-lg: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 4px 6px -1px oklch(0 0 0 / 0.1);
+  --shadow-xl: 0 1px 3px 0px oklch(0 0 0 / 0.1), 0 8px 10px -1px oklch(0 0 0 / 0.1);
   --shadow-2xl: 0 1px 3px 0px oklch(0 0 0 / 0.25);
 }
 
@@ -194,5 +184,40 @@
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+}
+@layer components {
+  .wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .wrapper {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wrapper {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .wrapper {
+      max-width: 1536px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .wrapper {
+      max-width: 1920px;
+    }
   }
 }

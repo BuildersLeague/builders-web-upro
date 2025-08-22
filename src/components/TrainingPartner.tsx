@@ -27,7 +27,7 @@ const partners = [
 
 export function TrainingPartner() {
   return (
-    <section className="w-full max-w-5xl mx-auto py-16 px-4 text-center">
+    <div className="wrapper text-center">
       <h2
         className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black leading-tight tracking-tight mb-8 lg:mb-12"
         style={{
@@ -38,7 +38,7 @@ export function TrainingPartner() {
       >
         MORE THAN JUST AN APP — A TRAINING PARTNER YOU CAN TRUST
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
         {partners.map(partner => (
           <Card
             key={partner.title}
@@ -62,6 +62,6 @@ export function TrainingPartner() {
           </Card>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
