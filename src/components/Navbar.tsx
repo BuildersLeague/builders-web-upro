@@ -53,7 +53,7 @@ export function Navbar() {
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="container mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 items-center px-8">
           <div className="flex flex-1 items-center justify-start gap-4">
             <div className="flex items-center justify-center lg:hidden">
               <DropdownMenu>
@@ -75,7 +75,9 @@ export function Navbar() {
                       asChild
                       key={navItem.label}
                       className={`px-4 py-2 text-sm lg:text-base ${
-                        isActiveLink(navItem.href) ? "text-[#00FF3C]" : "text-white"
+                        isActiveLink(navItem.href)
+                          ? "text-[#00FF3C]"
+                          : "text-white"
                       } hover:bg-white/10 focus:bg-white/10`}
                     >
                       <Link

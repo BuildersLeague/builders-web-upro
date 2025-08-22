@@ -37,7 +37,7 @@ export default function HowUProWorks(): ReactElement {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-col-1 md:grid-cols-6 gap-10 lg:gap-y-8 lg:gap-x-10 px-6 py-10  mx-auto">
+      <div className="grid grid-col-1 md:grid-cols-6 gap-10 lg:gap-y-8 lg:gap-x-10 py-10  mx-auto">
         {/* Capture Movement */}
         <div className={`col-span-3  ${cardClass}`}>
           <CardDetails
@@ -83,7 +83,7 @@ export default function HowUProWorks(): ReactElement {
               WebkitMaskRepeat: "no-repeat",
               maskRepeat: "no-repeat",
             }}
-            headerClassName="flex flex-col gap-2 px-6 py-4 text-white w-full lg:w-[55%] items-center lg:items-start"
+            headerClassName="flex flex-col gap-2 px-6 py-4 h-full text-white w-full lg:w-[55%] items-center lg:items-start"
             contentClassName="flex flex-col lg:flex-row-reverse h-full justify-start items-center lg:items-start gap-5"
           />
         </div>
