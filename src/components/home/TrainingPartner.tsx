@@ -27,7 +27,7 @@ const partners = [
 
 export function TrainingPartner() {
   return (
-    <div className="wrapper text-center">
+    <div className="wrapper text-center bg-black">
       <h2
         className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black leading-tight tracking-tight mb-8 lg:mb-12"
         style={{

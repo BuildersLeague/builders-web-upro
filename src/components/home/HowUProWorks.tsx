@@ -3,7 +3,7 @@ import CardDetails from "./CardDetails";
 
 export default function HowUProWorks(): ReactElement {
   const cardClass =
-    "bg-lime-950/70 rounded-lg overflow-hidden flex flex-col h-auto lg:h-96";
+    "bg-green-900 rounded-lg overflow-hidden flex flex-col h-auto lg:h-96";
 
   return (
     <div className="wrapper flex flex-col gap-5 bg-black h-auto">

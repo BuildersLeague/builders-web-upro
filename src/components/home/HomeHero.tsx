@@ -26,7 +26,7 @@ const heroImageVariants = {
   visible: { opacity: 1, scale: 1 },
 };
 
-export default function AnimatedHero() {
+export default function HomeHero() {
   return (
     <section
       className="relative overflow-hidden"

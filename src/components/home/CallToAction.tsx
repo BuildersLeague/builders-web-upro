@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function CallToActionPage() {
+export default function CallToAction() {
   return (
     <section
       id="contact"
